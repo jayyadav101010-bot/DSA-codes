@@ -18,7 +18,7 @@ int main(){
     }
     vector<int> unionarr;
     int i=0,j=0;
-    while(i<a || j<b){
+    while(i<a && j<b){
         if(arr1[i] <= arr2[j]){
             if(unionarr.size() == 0 || unionarr.back() != arr1[i]){
                 unionarr.push_back(arr1[i]);
@@ -32,9 +32,22 @@ int main(){
             j++; 
         }
     }
+    while(i<a){
+        if(unionarr.back()!=arr1[i]){
+            unionarr.push_back(arr1[i]);
+            i++;
+        }
+    }
+    while(j<b){
+        if(unionarr.back()!=arr2[j]){
+            unionarr.push_back(arr2[j]);
+            j++;
+        }
+    }
     cout<<"The union of given two sorted array is : "<<endl;
     for(int i=0;i<unionarr.size();i++){
         cout<<unionarr[i]<<" ";
     }
 
 }
+
