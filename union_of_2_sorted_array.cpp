@@ -18,7 +18,7 @@ int main(){
     }
     vector<int> unionarr;
     int i=0,j=0;
-    while(i<a && j<b){
+    while(i<a || j<b){
         if(arr1[i] <= arr2[j]){
             if(unionarr.size() == 0 || unionarr.back() != arr1[i]){
                 unionarr.push_back(arr1[i]);
@@ -36,4 +36,5 @@ int main(){
     for(int i=0;i<unionarr.size();i++){
         cout<<unionarr[i]<<" ";
     }
+
 }
